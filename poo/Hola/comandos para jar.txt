@@ -1,0 +1,3 @@
+jar -cf Nombre_del_jar.jar Nombre_del_class.class
+jar cmf temp.mf Nombre_del_jar.jar Nombre_del_class.class
+java -jar Nombre_del_jar.jar

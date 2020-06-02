@@ -1,0 +1,9 @@
+1.- Crear una clase libro que contenga los siguientes atributos:
+-SBN
+-Titulo
+-Autor
+-Numero de paginas 
+Crear sus respectivas metodos get y set correspondientes para  cada atributo
+Crear el metodo toString () para mostrar la informacion relativa al libro cpn el siguiente formato ""El libro <Su_titulo> con ISBN <su_ISBN> creado por el autor <Su_autor> contiene <Numero_pginas>
+En el fichero main, crear 2 objetos Libro (los valores que se quieran) y mostrarlos por pantalla
+Por ultimo, indicar cual de los 2 tiene más paginas
