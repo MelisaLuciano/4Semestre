@@ -1,0 +1,56 @@
+Create table Fabricante (Id_Fabr int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY, NombreF varchar(20) NOT NULL, Pais varchar(15) NOT NULL);
+Create table Programa (CodigoP int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY, NombreP varchar(20) NOT NULL, Version varchar(15) NOT NULL);
+Create table Desarrolla (Id_Fabr int(5) NOT NULL, 
+CodigoP int(5) NOT NULL, 
+PRIMARY KEY (Id_Fabr, CodigoP), 
+CONSTRAINT Id_Fabr 
+     FOREIGN KEY(Id_Fabr)
+     REFERENCES Empresa.Fabricante(Id_Fabr)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE, 
+CONSTRAINT CodigoP
+     FOREIGN KEY (CodigoP)
+     REFERENCES Empresa.Programa(CodigoP)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE);
+Create table Cliente (DNI int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY, NombreC varchar(20) NOT NULL, edad int(2) NOT NULL);
+
+Create table Comercio (CIF int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY, NombreCo varchar(20) NOT NULL, Ciudad varchar (20) NOT NULL);
+
+Create table Distribuye (CIFF int(5) NOT NULL,
+CodigoPP int(5) NOT NULL,
+Cantidad numeric(7,2),
+PRIMARY KEY (CIFF, CodigoPP),
+CONSTRAINT CIFF 
+	FOREIGN KEY(CIFF)
+	REFERENCES Empresa.Comercio(CIF)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE, 
+CONSTRAINT CodigoPP
+     FOREIGN KEY (CodigoPP)
+     REFERENCES Empresa.Programa(CodigoP)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE);
+
+Create table Registro (CIFFF int (5) NOT NULL,
+CodigoPPP int(5) NOT NULL, 
+DNII int(5) NOT NULL, 
+Medio varchar(20) NOT NULL,
+PRIMARY KEY (CIFFF, CodigoPPP, DNII),
+CONSTRAINT CIFFF 
+	FOREIGN KEY(CIFFF)
+	REFERENCES Empresa.Comercio(CIF)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE, 
+CONSTRAINT CodigoPPP
+     FOREIGN KEY (CodigoPPP)
+     REFERENCES Empresa.Programa(CodigoP)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE,
+CONSTRAINT DNII
+     FOREIGN KEY (DNII)
+     REFERENCES Empresa.Cliente(DNI)
+     ON DELETE CASCADE 
+     ON UPDATE CASCADE);
+ 
+);

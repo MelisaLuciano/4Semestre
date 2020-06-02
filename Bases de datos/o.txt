@@ -1,0 +1,11 @@
+de profesor mostrara su idp y su nombre y de alumno pone el id y su nombre, de la tabla profesor p, que es la que maneja, y se muestran las tuplas siempre y cuando se encuentren en esa seleccion, que seleccione el nombre e idp siempre y cuando sean igual es los nombre y los id y los va a mostrar
+Alias hay  para relaciones y para atributos, para las relaciones: los nombres de las tablas son largos, 
+Select P.idP, P..NombreP, P.Edad from Profesor P
+Where exist (select A.idP, A.NombreP
+From Alumno A where
+P.idP = A.idP AND P.NombreP = A.nombreP);
+
+Select P.Aux1, P.Aux2, from ProfesorP
+	Where P. Aux1 NOT IN (Select A.Aux3 from Alumo A)
+	AND P.Aux2 NOT IN (Select A.Aux4, from Alumno A)
+		Where P.Aux1 AND P.Aux2 exists

@@ -1,0 +1,13 @@
+Select NombreC, Edad from Cliente natural join Registro natural join programa natural join Desarrollo natural join Fabricante where edad= min(edad);
+
+select distinct NombreC, Edad from Cliente natural join Fabricante where Edad = 18;
+
+SELECT Id_Fabr FROM Fabricante WHERE Id_Fabr = 1;
+
+SELECT CodigoP FROM Desarrolla WHERE Id_Fabr = ;
+
+SELECT DNII FROM Registro WHERE CodigoPPP = ;
+
+SELECT CodigoP FROM Desarrolla WHERE Id_Fabr = (SELECT Id_Fabr FROM Fabricante WHERE Id_Fabr = 1);
+
+SELECT DNII FROM Registro WHERE CodigoPPP =
